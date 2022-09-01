@@ -1,0 +1,2332 @@
+{
+  "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "Fortify SCA",
+        "version" : "22.1.0.0166",
+        "rules" : [ {
+          "id" : "4344",
+          "shortDescription" : {
+            "text" : "Dockerfile Misconfiguration: Default User Privilege"
+          },
+          "fullDescription" : {
+            "text" : "The Dockerfile does not specify a USER, so it defaults to running with a root user.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4344/?engineType=SCA&issue=C30558D67920422BF94AC1350B33CF49.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4344/?engineType=SCA&issue=C30558D67920422BF94AC1350B33CF49)."
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4333",
+          "shortDescription" : {
+            "text" : "Password Management: Hardcoded Password"
+          },
+          "fullDescription" : {
+            "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4333/?engineType=SCA&issue=A1A174E0B163082FF1E5CA9CC2180B96.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4333/?engineType=SCA&issue=A1A174E0B163082FF1E5CA9CC2180B96)."
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4334",
+          "shortDescription" : {
+            "text" : "Password Management: Hardcoded Password"
+          },
+          "fullDescription" : {
+            "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4334/?engineType=SCA&issue=A1A174E0B163082FF1E5CA9CC2180B97.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4334/?engineType=SCA&issue=A1A174E0B163082FF1E5CA9CC2180B97)."
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4326",
+          "shortDescription" : {
+            "text" : "Build Misconfiguration: External Maven Dependency Repository"
+          },
+          "fullDescription" : {
+            "text" : "This maven build script relies on external sources, which could allow an attacker to insert malicious code into the final product or to take control of the build machine.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4326/?engineType=SCA&issue=87E3EC5CC8154C006783CC461A6DDEEB.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4326/?engineType=SCA&issue=87E3EC5CC8154C006783CC461A6DDEEB)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4327",
+          "shortDescription" : {
+            "text" : "System Information Leak: Struts 2"
+          },
+          "fullDescription" : {
+            "text" : "Revealing system data or debugging information helps an adversary learn about the system and form a plan of attack.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4327/?engineType=SCA&issue=8A3F2FE7439259154AADB746A911E394.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4327/?engineType=SCA&issue=8A3F2FE7439259154AADB746A911E394)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4330",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4330/?engineType=SCA&issue=91EB85F977247B89E4C347CCDC9B7C9E.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4330/?engineType=SCA&issue=91EB85F977247B89E4C347CCDC9B7C9E)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4358",
+          "shortDescription" : {
+            "text" : "System Information Leak"
+          },
+          "fullDescription" : {
+            "text" : "The function renderText() in BaseController.java reveals system data or debug information by calling printStackTrace() on line 62. The information revealed by printStackTrace() could help an adversary form a plan of attack.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4358/?engineType=SCA&issue=FD12FE6FC705F7DEEFC8029D24CA1A81.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4358/?engineType=SCA&issue=FD12FE6FC705F7DEEFC8029D24CA1A81)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4336",
+          "shortDescription" : {
+            "text" : "System Information Leak"
+          },
+          "fullDescription" : {
+            "text" : "The function renderJSON() in BaseController.java reveals system data or debug information by calling printStackTrace() on line 75. The information revealed by printStackTrace() could help an adversary form a plan of attack.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4336/?engineType=SCA&issue=A64622E544ACEF0FF2CBC91A944348D5.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4336/?engineType=SCA&issue=A64622E544ACEF0FF2CBC91A944348D5)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4346",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4346/?engineType=SCA&issue=C4FDB000933A03F4805D7E23391F9A7E.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4346/?engineType=SCA&issue=C4FDB000933A03F4805D7E23391F9A7E)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4311",
+          "shortDescription" : {
+            "text" : "Struts 2: Action Field Without Validator"
+          },
+          "fullDescription" : {
+            "text" : "An Action Field was found without a corresponding validation definition.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4311/?engineType=SCA&issue=39F250AE15CAC387EDD5C941ECCA7EA1.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4311/?engineType=SCA&issue=39F250AE15CAC387EDD5C941ECCA7EA1)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4303",
+          "shortDescription" : {
+            "text" : "Struts 2: Action Field Without Validator"
+          },
+          "fullDescription" : {
+            "text" : "An Action Field was found without a corresponding validation definition.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4303/?engineType=SCA&issue=1C9ECCFE853A32DD09D4BBAA03565655.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4303/?engineType=SCA&issue=1C9ECCFE853A32DD09D4BBAA03565655)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4316",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4316/?engineType=SCA&issue=5524969D03F1852D9793B193974B507F.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4316/?engineType=SCA&issue=5524969D03F1852D9793B193974B507F)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4320",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Catch"
+          },
+          "fullDescription" : {
+            "text" : "The catch block at PingAction.java line 36 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4320/?engineType=SCA&issue=5E6159E0C738CB312E011A8545947D3C.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4320/?engineType=SCA&issue=5E6159E0C738CB312E011A8545947D3C)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4317",
+          "shortDescription" : {
+            "text" : "Command Injection"
+          },
+          "fullDescription" : {
+            "text" : "The method doExecCommand() in PingAction.java calls exec() with a command built from untrusted data. This call can cause the program to execute malicious commands on behalf of an attacker.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4317/?engineType=SCA&issue=55CD8DAA81FEA1C3CC22A6AAFB970A94.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4317/?engineType=SCA&issue=55CD8DAA81FEA1C3CC22A6AAFB970A94)."
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4356",
+          "shortDescription" : {
+            "text" : "Denial of Service"
+          },
+          "fullDescription" : {
+            "text" : "The call to readLine() at PingAction.java line 52 might allow an attacker to crash the program or otherwise make it unavailable to legitimate users.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4356/?engineType=SCA&issue=FCAA83F93F95ABC9CEE6CE1E4A5C943F.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4356/?engineType=SCA&issue=FCAA83F93F95ABC9CEE6CE1E4A5C943F)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4355",
+          "shortDescription" : {
+            "text" : "Denial of Service"
+          },
+          "fullDescription" : {
+            "text" : "The call to readLine() at PingAction.java line 59 might allow an attacker to crash the program or otherwise make it unavailable to legitimate users.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4355/?engineType=SCA&issue=FCAA83F93F95ABC9CEE6CE1E4A5C943E.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4355/?engineType=SCA&issue=FCAA83F93F95ABC9CEE6CE1E4A5C943E)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4352",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4352/?engineType=SCA&issue=F37D902FE731E75BAC2552AB489CF0F9.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4352/?engineType=SCA&issue=F37D902FE731E75BAC2552AB489CF0F9)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4300",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Catch"
+          },
+          "fullDescription" : {
+            "text" : "The catch block at ProductAction.java line 89 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4300/?engineType=SCA&issue=0A55E71B873B79684AA6BC9750D4CEBB.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4300/?engineType=SCA&issue=0A55E71B873B79684AA6BC9750D4CEBB)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4301",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4301/?engineType=SCA&issue=17EC79C5744FAE22272C6D7198B47113.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4301/?engineType=SCA&issue=17EC79C5744FAE22272C6D7198B47113)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4331",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Catch"
+          },
+          "fullDescription" : {
+            "text" : "The catch block at Register.java line 88 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4331/?engineType=SCA&issue=96EC1700A732CDD6F8AC87E8F8B0F4A6.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4331/?engineType=SCA&issue=96EC1700A732CDD6F8AC87E8F8B0F4A6)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4319",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4319/?engineType=SCA&issue=5E4DF2EF8C888F6DFA97C0B957F84BE5.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4319/?engineType=SCA&issue=5E4DF2EF8C888F6DFA97C0B957F84BE5)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4322",
+          "shortDescription" : {
+            "text" : "Password Management: Password in Comment"
+          },
+          "fullDescription" : {
+            "text" : "Storing passwords or password details in plain text anywhere in the system or system code may compromise system security in a way that cannot be easily remedied.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4322/?engineType=SCA&issue=6A308A8B5B632A509739A8C79FEFC0F4.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4322/?engineType=SCA&issue=6A308A8B5B632A509739A8C79FEFC0F4)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4315",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Catch"
+          },
+          "fullDescription" : {
+            "text" : "The catch block at ResetPassword.java line 77 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4315/?engineType=SCA&issue=54ED032CBF0EA1F83665A6E3B5616396.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4315/?engineType=SCA&issue=54ED032CBF0EA1F83665A6E3B5616396)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4328",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4328/?engineType=SCA&issue=8CF9F9724D45A35960B497BE864D0EFF.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4328/?engineType=SCA&issue=8CF9F9724D45A35960B497BE864D0EFF)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4351",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Catch"
+          },
+          "fullDescription" : {
+            "text" : "The catch block at UserAction.java line 115 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4351/?engineType=SCA&issue=F0D4FBB4B58E8832C40505D573758718.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4351/?engineType=SCA&issue=F0D4FBB4B58E8832C40505D573758718)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4354",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Throws"
+          },
+          "fullDescription" : {
+            "text" : "The method intercept() in AuthenticationInterceptor.java throws a generic exception making it harder for callers to do a good job of error handling and recovery.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4354/?engineType=SCA&issue=F88D2FDE11E6BC2D97A2C5EADBEC645D.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4354/?engineType=SCA&issue=F88D2FDE11E6BC2D97A2C5EADBEC645D)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4347",
+          "shortDescription" : {
+            "text" : "Dead Code: Unused Method"
+          },
+          "fullDescription" : {
+            "text" : "The method setTimestamps() in Product.java is not reachable from any method outside the class. It is dead code. Dead code is defined as code that is never directly or indirectly executed by a public method.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4347/?engineType=SCA&issue=CB467795FAB311085FA770F87C37DD67.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4347/?engineType=SCA&issue=CB467795FAB311085FA770F87C37DD67)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4359",
+          "shortDescription" : {
+            "text" : "Mass Assignment: Sensitive Field Exposure"
+          },
+          "fullDescription" : {
+            "text" : "A sensitive field defined in User.java on line 21 is exposed to the model binder.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4359/?engineType=SCA&issue=FEF2859639B1D1F00213E4DF1C9257EF.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4359/?engineType=SCA&issue=FEF2859639B1D1F00213E4DF1C9257EF)."
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4349",
+          "shortDescription" : {
+            "text" : "Dead Code: Unused Field"
+          },
+          "fullDescription" : {
+            "text" : "The field createdAt is never used.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4349/?engineType=SCA&issue=D8BD2E8C095E7052BBFB2ECAEA37231C.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4349/?engineType=SCA&issue=D8BD2E8C095E7052BBFB2ECAEA37231C)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4312",
+          "shortDescription" : {
+            "text" : "Dead Code: Unused Field"
+          },
+          "fullDescription" : {
+            "text" : "The field updatedAt is never used.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4312/?engineType=SCA&issue=46D0FAF0138E403208D7FCFB3919D41B.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4312/?engineType=SCA&issue=46D0FAF0138E403208D7FCFB3919D41B)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4345",
+          "shortDescription" : {
+            "text" : "Dead Code: Unused Method"
+          },
+          "fullDescription" : {
+            "text" : "The method setTimestamps() in User.java is not reachable from any method outside the class. It is dead code. Dead code is defined as code that is never directly or indirectly executed by a public method.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4345/?engineType=SCA&issue=C47DE0274E2DF9B3CB5771203FE5BA90.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4345/?engineType=SCA&issue=C47DE0274E2DF9B3CB5771203FE5BA90)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4357",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4357/?engineType=SCA&issue=FD10023E2A00EAC1C7E48500D18B16D6.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4357/?engineType=SCA&issue=FD10023E2A00EAC1C7E48500D18B16D6)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4304",
+          "shortDescription" : {
+            "text" : "Struts 2: Unvalidated Action"
+          },
+          "fullDescription" : {
+            "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4304/?engineType=SCA&issue=1E77E17D1C67D05A6C5401C0E8E88F08.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4304/?engineType=SCA&issue=1E77E17D1C67D05A6C5401C0E8E88F08)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4348",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Throws"
+          },
+          "fullDescription" : {
+            "text" : "The method execute() in HelloWorld.java throws a generic exception making it harder for callers to do a good job of error handling and recovery.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4348/?engineType=SCA&issue=D2000A8F6E5E4CB3478CEB658026ABE5.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4348/?engineType=SCA&issue=D2000A8F6E5E4CB3478CEB658026ABE5)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4342",
+          "shortDescription" : {
+            "text" : "Poor Error Handling: Overly Broad Throws"
+          },
+          "fullDescription" : {
+            "text" : "The method execute() in Login.java throws a generic exception making it harder for callers to do a good job of error handling and recovery.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4342/?engineType=SCA&issue=BB4890248C7A4E106498D2003F3C55AD.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4342/?engineType=SCA&issue=BB4890248C7A4E106498D2003F3C55AD)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4332",
+          "shortDescription" : {
+            "text" : "Struts 2: Validator Without Action Field"
+          },
+          "fullDescription" : {
+            "text" : "A Struts2 validator is defined for an action field that does not exist.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4332/?engineType=SCA&issue=A038C3DA104795C1A4CF74955E157ABC.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4332/?engineType=SCA&issue=A038C3DA104795C1A4CF74955E157ABC)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4302",
+          "shortDescription" : {
+            "text" : "Password Management: Password in Configuration File"
+          },
+          "fullDescription" : {
+            "text" : "Storing a plain text password in a configuration file may result in a system compromise.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4302/?engineType=SCA&issue=1B1FDA4A6A9C933BD42E3A4411FB544F.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4302/?engineType=SCA&issue=1B1FDA4A6A9C933BD42E3A4411FB544F)."
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "4299",
+          "shortDescription" : {
+            "text" : "OGNL Expression Injection: Struts 2"
+          },
+          "fullDescription" : {
+            "text" : "Using wildcards (*) in Struts 2 action names enables evaluation of action names as OGNL expressions effectively enabling an attacker to modify system variables such as <code>Session</code> or execute arbitrary commands on the server.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4299/?engineType=SCA&issue=01B2AC68E4FADD79102D89E1C5782205.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4299/?engineType=SCA&issue=01B2AC68E4FADD79102D89E1C5782205)."
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "4341",
+          "shortDescription" : {
+            "text" : "OGNL Expression Injection: Struts 2"
+          },
+          "fullDescription" : {
+            "text" : "Application is deployed in Development Mode (devMode) allowing arbitrary command execution on the server and leaking detailed information about how the application is coded.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4341/?engineType=SCA&issue=BADBE2462CA5AC27347FED8D19C63693.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4341/?engineType=SCA&issue=BADBE2462CA5AC27347FED8D19C63693)."
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "4324",
+          "shortDescription" : {
+            "text" : "Password Management: Password in Configuration File"
+          },
+          "fullDescription" : {
+            "text" : "Storing a plain text password in a configuration file may result in a system compromise.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4324/?engineType=SCA&issue=7852C9684E0399E2AAA93461DD83E714.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4324/?engineType=SCA&issue=7852C9684E0399E2AAA93461DD83E714)."
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4305",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at Login.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4305/?engineType=SCA&issue=1FCC1E56FEB6B3696535A573237EC792.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4305/?engineType=SCA&issue=1FCC1E56FEB6B3696535A573237EC792)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4309",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at Ping.jsp line 20 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4309/?engineType=SCA&issue=390B3F841FB1997D52262A8F6003E92F.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4309/?engineType=SCA&issue=390B3F841FB1997D52262A8F6003E92F)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4314",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at ProductEdit.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4314/?engineType=SCA&issue=48146F4AA788200C848FDF8398B6C1D0.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4314/?engineType=SCA&issue=48146F4AA788200C848FDF8398B6C1D0)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4335",
+          "shortDescription" : {
+            "text" : "Hidden Field"
+          },
+          "fullDescription" : {
+            "text" : "A hidden form field is used in ProductEdit.jsp on line 26.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4335/?engineType=SCA&issue=A4F905DAC1673BD62CA51F88BA366C93.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4335/?engineType=SCA&issue=A4F905DAC1673BD62CA51F88BA366C93)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4337",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at ProductList.jsp line 60 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4337/?engineType=SCA&issue=A6AC08FCC5A79936441489A8A47E66ED.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4337/?engineType=SCA&issue=A6AC08FCC5A79936441489A8A47E66ED)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4308",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at Registration.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4308/?engineType=SCA&issue=3186B9D5460F51CE8E9CBA615561D7E6.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4308/?engineType=SCA&issue=3186B9D5460F51CE8E9CBA615561D7E6)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4307",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at ResetPasswordInput.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4307/?engineType=SCA&issue=2BA169A83ED369B7A33D769A4CC4FBDD.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4307/?engineType=SCA&issue=2BA169A83ED369B7A33D769A4CC4FBDD)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4339",
+          "shortDescription" : {
+            "text" : "Hidden Field"
+          },
+          "fullDescription" : {
+            "text" : "A hidden form field is used in ResetPasswordInput.jsp on line 34.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4339/?engineType=SCA&issue=B95EC8BFA534F48CD6DC5F0DB7BD250F.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4339/?engineType=SCA&issue=B95EC8BFA534F48CD6DC5F0DB7BD250F)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4340",
+          "shortDescription" : {
+            "text" : "Hidden Field"
+          },
+          "fullDescription" : {
+            "text" : "A hidden form field is used in ResetPasswordInput.jsp on line 35.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4340/?engineType=SCA&issue=B95EC8BFA534F48CD6DC5F0DB7BD2510.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4340/?engineType=SCA&issue=B95EC8BFA534F48CD6DC5F0DB7BD2510)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4323",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at ResetPasswordStart.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4323/?engineType=SCA&issue=735FCC38444C095798196AC03D6FDAB2.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4323/?engineType=SCA&issue=735FCC38444C095798196AC03D6FDAB2)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4353",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at UserEdit.jsp line 21 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4353/?engineType=SCA&issue=F3F2711DFA11EB2716262F1C6823A3C8.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4353/?engineType=SCA&issue=F3F2711DFA11EB2716262F1C6823A3C8)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4313",
+          "shortDescription" : {
+            "text" : "Hidden Field"
+          },
+          "fullDescription" : {
+            "text" : "A hidden form field is used in UserEdit.jsp on line 22.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4313/?engineType=SCA&issue=47EEB7D3C816D74B7099C0EE556E45AA.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4313/?engineType=SCA&issue=47EEB7D3C816D74B7099C0EE556E45AA)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4318",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at UserSearch.jsp line 21 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4318/?engineType=SCA&issue=592B0DD2D4A96EE1F188970758EDA711.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4318/?engineType=SCA&issue=592B0DD2D4A96EE1F188970758EDA711)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4329",
+          "shortDescription" : {
+            "text" : "System Information Leak: HTML Comment in JSP"
+          },
+          "fullDescription" : {
+            "text" : "Any information revealed in the HTML comment at Footer.jsp line 17 could help an adversary learn about the system and form a plan of attack.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4329/?engineType=SCA&issue=8E5F76C9D7D6691AD337CB3D264002AB.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4329/?engineType=SCA&issue=8E5F76C9D7D6691AD337CB3D264002AB)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4321",
+          "shortDescription" : {
+            "text" : "System Information Leak: HTML Comment in JSP"
+          },
+          "fullDescription" : {
+            "text" : "Any information revealed in the HTML comment at Head.jsp line 5 could help an adversary learn about the system and form a plan of attack.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4321/?engineType=SCA&issue=64F8FD3C5EC4F9EDBF4E5094E2923346.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4321/?engineType=SCA&issue=64F8FD3C5EC4F9EDBF4E5094E2923346)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4338",
+          "shortDescription" : {
+            "text" : "Hardcoded Domain in HTML"
+          },
+          "fullDescription" : {
+            "text" : "The file Head.jsp references a script using a hardcoded domain name on line 7. If attackers compromise the domain, they will have malicious code on this page.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4338/?engineType=SCA&issue=B42D3BC345715BC780882BE260A4595B.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4338/?engineType=SCA&issue=B42D3BC345715BC780882BE260A4595B)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4350",
+          "shortDescription" : {
+            "text" : "Dynamic Code Evaluation: Insecure Transport"
+          },
+          "fullDescription" : {
+            "text" : "The file Head.jsp on line 7 loads a script over an unencrypted channel.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4350/?engineType=SCA&issue=E275D60D42B32BAB6E53FE531B8E3F26.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4350/?engineType=SCA&issue=E275D60D42B32BAB6E53FE531B8E3F26)."
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "4325",
+          "shortDescription" : {
+            "text" : "System Information Leak: HTML Comment in JSP"
+          },
+          "fullDescription" : {
+            "text" : "Any information revealed in the HTML comment at Navigation.jsp line 37 could help an adversary learn about the system and form a plan of attack.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4325/?engineType=SCA&issue=7A47D2D51B2E8B627C8C43E37B499C6A.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4325/?engineType=SCA&issue=7A47D2D51B2E8B627C8C43E37B499C6A)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4306",
+          "shortDescription" : {
+            "text" : "Cross-Site Request Forgery"
+          },
+          "fullDescription" : {
+            "text" : "The form post at Login.jsp line 9 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4306/?engineType=SCA&issue=1FCC1E56FEB6B3696535A573237EC793.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4306/?engineType=SCA&issue=1FCC1E56FEB6B3696535A573237EC793)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4310",
+          "shortDescription" : {
+            "text" : "J2EE Misconfiguration: Missing Error Handling"
+          },
+          "fullDescription" : {
+            "text" : "A web application must define default error pages in order to prevent attackers from mining information from the application container's built-in error response.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4310/?engineType=SCA&issue=399A248E35AE0FBB04255DE45FA9754C.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4310/?engineType=SCA&issue=399A248E35AE0FBB04255DE45FA9754C)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "4343",
+          "shortDescription" : {
+            "text" : "J2EE Misconfiguration: Excessive Session Timeout"
+          },
+          "fullDescription" : {
+            "text" : "An overly long session timeout gives attackers more time to potentially compromise user accounts.\n\n\n"
+          },
+          "help" : {
+            "text" : "For detailed recommendations, code examples, dataflow diagram and more, see http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4343/?engineType=SCA&issue=C2F39B963AB1AFACD8D57325EEAF747F.",
+            "markdown" : "For detailed recommendations, code examples, dataflow diagram and more, log in to [SSC](http://192.168.65.213:8080/ssc/html/ssc/version/10/fix/4343/?engineType=SCA&issue=C2F39B963AB1AFACD8D57325EEAF747F)."
+          },
+          "properties" : {
+            "tags" : [ "Low" ],
+            "precision" : "low"
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "4344",
+      "message" : {
+        "text" : "The Dockerfile does not specify a USER, so it defaults to running with a root user.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "C30558D67920422BF94AC1350B33CF49"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "Dockerfile"
+          },
+          "region" : {
+            "startLine" : 1,
+            "endLine" : 1,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4333",
+      "message" : {
+        "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A1A174E0B163082FF1E5CA9CC2180B96"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker-compose.yml"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4334",
+      "message" : {
+        "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A1A174E0B163082FF1E5CA9CC2180B97"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker-compose.yml"
+          },
+          "region" : {
+            "startLine" : 16,
+            "endLine" : 16,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4326",
+      "message" : {
+        "text" : "This maven build script relies on external sources, which could allow an attacker to insert malicious code into the final product or to take control of the build machine.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "87E3EC5CC8154C006783CC461A6DDEEB"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "pom.xml"
+          },
+          "region" : {
+            "startLine" : 3,
+            "endLine" : 3,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4327",
+      "message" : {
+        "text" : "Revealing system data or debugging information helps an adversary learn about the system and form a plan of attack.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "8A3F2FE7439259154AADB746A911E394"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "pom.xml"
+          },
+          "region" : {
+            "startLine" : 28,
+            "endLine" : 28,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4330",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "91EB85F977247B89E4C347CCDC9B7C9E"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/ApiAction.java"
+          },
+          "region" : {
+            "startLine" : 14,
+            "endLine" : 14,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4358",
+      "message" : {
+        "text" : "The function renderText() in BaseController.java reveals system data or debug information by calling printStackTrace() on line 62. The information revealed by printStackTrace() could help an adversary form a plan of attack.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "FD12FE6FC705F7DEEFC8029D24CA1A81"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/BaseController.java"
+          },
+          "region" : {
+            "startLine" : 62,
+            "endLine" : 62,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4336",
+      "message" : {
+        "text" : "The function renderJSON() in BaseController.java reveals system data or debug information by calling printStackTrace() on line 75. The information revealed by printStackTrace() could help an adversary form a plan of attack.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A64622E544ACEF0FF2CBC91A944348D5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/BaseController.java"
+          },
+          "region" : {
+            "startLine" : 75,
+            "endLine" : 75,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4346",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "C4FDB000933A03F4805D7E23391F9A7E"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/Home.java"
+          },
+          "region" : {
+            "startLine" : 8,
+            "endLine" : 8,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4311",
+      "message" : {
+        "text" : "An Action Field was found without a corresponding validation definition.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "39F250AE15CAC387EDD5C941ECCA7EA1"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/Login.java"
+          },
+          "region" : {
+            "startLine" : 9,
+            "endLine" : 9,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4303",
+      "message" : {
+        "text" : "An Action Field was found without a corresponding validation definition.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "1C9ECCFE853A32DD09D4BBAA03565655"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/Login.java"
+          },
+          "region" : {
+            "startLine" : 11,
+            "endLine" : 11,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4316",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "5524969D03F1852D9793B193974B507F"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/PingAction.java"
+          },
+          "region" : {
+            "startLine" : 9,
+            "endLine" : 9,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4320",
+      "message" : {
+        "text" : "The catch block at PingAction.java line 36 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "5E6159E0C738CB312E011A8545947D3C"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/PingAction.java"
+          },
+          "region" : {
+            "startLine" : 36,
+            "endLine" : 36,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4317",
+      "message" : {
+        "text" : "The method doExecCommand() in PingAction.java calls exec() with a command built from untrusted data. This call can cause the program to execute malicious commands on behalf of an attacker.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "55CD8DAA81FEA1C3CC22A6AAFB970A94"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/PingAction.java"
+          },
+          "region" : {
+            "startLine" : 46,
+            "endLine" : 46,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4356",
+      "message" : {
+        "text" : "The call to readLine() at PingAction.java line 52 might allow an attacker to crash the program or otherwise make it unavailable to legitimate users.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "FCAA83F93F95ABC9CEE6CE1E4A5C943F"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/PingAction.java"
+          },
+          "region" : {
+            "startLine" : 52,
+            "endLine" : 52,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4355",
+      "message" : {
+        "text" : "The call to readLine() at PingAction.java line 59 might allow an attacker to crash the program or otherwise make it unavailable to legitimate users.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "FCAA83F93F95ABC9CEE6CE1E4A5C943E"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/PingAction.java"
+          },
+          "region" : {
+            "startLine" : 59,
+            "endLine" : 59,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4352",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "F37D902FE731E75BAC2552AB489CF0F9"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/ProductAction.java"
+          },
+          "region" : {
+            "startLine" : 11,
+            "endLine" : 11,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4300",
+      "message" : {
+        "text" : "The catch block at ProductAction.java line 89 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "0A55E71B873B79684AA6BC9750D4CEBB"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/ProductAction.java"
+          },
+          "region" : {
+            "startLine" : 89,
+            "endLine" : 89,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4301",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "17EC79C5744FAE22272C6D7198B47113"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/RedirectAction.java"
+          },
+          "region" : {
+            "startLine" : 5,
+            "endLine" : 5,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4331",
+      "message" : {
+        "text" : "The catch block at Register.java line 88 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "96EC1700A732CDD6F8AC87E8F8B0F4A6"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/Register.java"
+          },
+          "region" : {
+            "startLine" : 88,
+            "endLine" : 88,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4319",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "5E4DF2EF8C888F6DFA97C0B957F84BE5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/ResetPassword.java"
+          },
+          "region" : {
+            "startLine" : 6,
+            "endLine" : 6,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4322",
+      "message" : {
+        "text" : "Storing passwords or password details in plain text anywhere in the system or system code may compromise system security in a way that cannot be easily remedied.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "6A308A8B5B632A509739A8C79FEFC0F4"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/ResetPassword.java"
+          },
+          "region" : {
+            "startLine" : 58,
+            "endLine" : 58,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4315",
+      "message" : {
+        "text" : "The catch block at ResetPassword.java line 77 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "54ED032CBF0EA1F83665A6E3B5616396"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/ResetPassword.java"
+          },
+          "region" : {
+            "startLine" : 77,
+            "endLine" : 77,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4328",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "8CF9F9724D45A35960B497BE864D0EFF"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/UserAction.java"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4351",
+      "message" : {
+        "text" : "The catch block at UserAction.java line 115 handles a broad swath of exceptions,  potentially trapping dissimilar issues or problems that should not be dealt with at this point in the program.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "F0D4FBB4B58E8832C40505D573758718"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/controllers/UserAction.java"
+          },
+          "region" : {
+            "startLine" : 115,
+            "endLine" : 115,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4354",
+      "message" : {
+        "text" : "The method intercept() in AuthenticationInterceptor.java throws a generic exception making it harder for callers to do a good job of error handling and recovery.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "F88D2FDE11E6BC2D97A2C5EADBEC645D"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/interceptors/AuthenticationInterceptor.java"
+          },
+          "region" : {
+            "startLine" : 15,
+            "endLine" : 15,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4347",
+      "message" : {
+        "text" : "The method setTimestamps() in Product.java is not reachable from any method outside the class. It is dead code. Dead code is defined as code that is never directly or indirectly executed by a public method.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "CB467795FAB311085FA770F87C37DD67"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/models/Product.java"
+          },
+          "region" : {
+            "startLine" : 94,
+            "endLine" : 94,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4359",
+      "message" : {
+        "text" : "A sensitive field defined in User.java on line 21 is exposed to the model binder.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "FEF2859639B1D1F00213E4DF1C9257EF"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/models/User.java"
+          },
+          "region" : {
+            "startLine" : 21,
+            "endLine" : 21,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4349",
+      "message" : {
+        "text" : "The field createdAt is never used.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "D8BD2E8C095E7052BBFB2ECAEA37231C"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/models/User.java"
+          },
+          "region" : {
+            "startLine" : 34,
+            "endLine" : 34,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4312",
+      "message" : {
+        "text" : "The field updatedAt is never used.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "46D0FAF0138E403208D7FCFB3919D41B"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/models/User.java"
+          },
+          "region" : {
+            "startLine" : 38,
+            "endLine" : 38,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4345",
+      "message" : {
+        "text" : "The method setTimestamps() in User.java is not reachable from any method outside the class. It is dead code. Dead code is defined as code that is never directly or indirectly executed by a public method.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "C47DE0274E2DF9B3CB5771203FE5BA90"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/models/User.java"
+          },
+          "region" : {
+            "startLine" : 94,
+            "endLine" : 94,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4357",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "FD10023E2A00EAC1C7E48500D18B16D6"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/example/ExampleSupport.java"
+          },
+          "region" : {
+            "startLine" : 29,
+            "endLine" : 29,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4304",
+      "message" : {
+        "text" : "Struts2 Actions should utilize the Struts Validation framework to prevent vulnerabilities that result from unchecked input.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "1E77E17D1C67D05A6C5401C0E8E88F08"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/example/HelloWorld.java"
+          },
+          "region" : {
+            "startLine" : 27,
+            "endLine" : 27,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4348",
+      "message" : {
+        "text" : "The method execute() in HelloWorld.java throws a generic exception making it harder for callers to do a good job of error handling and recovery.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "D2000A8F6E5E4CB3478CEB658026ABE5"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/example/HelloWorld.java"
+          },
+          "region" : {
+            "startLine" : 29,
+            "endLine" : 29,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4342",
+      "message" : {
+        "text" : "The method execute() in Login.java throws a generic exception making it harder for callers to do a good job of error handling and recovery.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "BB4890248C7A4E106498D2003F3C55AD"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/example/Login.java"
+          },
+          "region" : {
+            "startLine" : 26,
+            "endLine" : 26,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4332",
+      "message" : {
+        "text" : "A Struts2 validator is defined for an action field that does not exist.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A038C3DA104795C1A4CF74955E157ABC"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/resources/com/appsecco/example/Login-validation.xml"
+          },
+          "region" : {
+            "startLine" : 6,
+            "endLine" : 6,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4302",
+      "message" : {
+        "text" : "Storing a plain text password in a configuration file may result in a system compromise.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "1B1FDA4A6A9C933BD42E3A4411FB544F"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/resources/com/appsecco/example/package.properties"
+          },
+          "region" : {
+            "startLine" : 3,
+            "endLine" : 3,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4299",
+      "message" : {
+        "text" : "Using wildcards (*) in Struts 2 action names enables evaluation of action names as OGNL expressions effectively enabling an attacker to modify system variables such as <code>Session</code> or execute arbitrary commands on the server.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "01B2AC68E4FADD79102D89E1C5782205"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/resources/example.xml"
+          },
+          "region" : {
+            "startLine" : 23,
+            "endLine" : 23,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4341",
+      "message" : {
+        "text" : "Application is deployed in Development Mode (devMode) allowing arbitrary command execution on the server and leaking detailed information about how the application is coded.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "BADBE2462CA5AC27347FED8D19C63693"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/resources/struts.xml"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4324",
+      "message" : {
+        "text" : "Storing a plain text password in a configuration file may result in a system compromise.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "7852C9684E0399E2AAA93461DD83E714"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/config.properties"
+          },
+          "region" : {
+            "startLine" : 4,
+            "endLine" : 4,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4305",
+      "message" : {
+        "text" : "The form post at Login.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "1FCC1E56FEB6B3696535A573237EC792"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/Login.jsp"
+          },
+          "region" : {
+            "startLine" : 24,
+            "endLine" : 24,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4309",
+      "message" : {
+        "text" : "The form post at Ping.jsp line 20 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "390B3F841FB1997D52262A8F6003E92F"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/Ping.jsp"
+          },
+          "region" : {
+            "startLine" : 20,
+            "endLine" : 20,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4314",
+      "message" : {
+        "text" : "The form post at ProductEdit.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "48146F4AA788200C848FDF8398B6C1D0"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/ProductEdit.jsp"
+          },
+          "region" : {
+            "startLine" : 24,
+            "endLine" : 24,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4335",
+      "message" : {
+        "text" : "A hidden form field is used in ProductEdit.jsp on line 26.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A4F905DAC1673BD62CA51F88BA366C93"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/ProductEdit.jsp"
+          },
+          "region" : {
+            "startLine" : 26,
+            "endLine" : 26,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4337",
+      "message" : {
+        "text" : "The form post at ProductList.jsp line 60 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A6AC08FCC5A79936441489A8A47E66ED"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/ProductList.jsp"
+          },
+          "region" : {
+            "startLine" : 60,
+            "endLine" : 60,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4308",
+      "message" : {
+        "text" : "The form post at Registration.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "3186B9D5460F51CE8E9CBA615561D7E6"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/Registration.jsp"
+          },
+          "region" : {
+            "startLine" : 24,
+            "endLine" : 24,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4307",
+      "message" : {
+        "text" : "The form post at ResetPasswordInput.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "2BA169A83ED369B7A33D769A4CC4FBDD"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/ResetPasswordInput.jsp"
+          },
+          "region" : {
+            "startLine" : 24,
+            "endLine" : 24,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4339",
+      "message" : {
+        "text" : "A hidden form field is used in ResetPasswordInput.jsp on line 34.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "B95EC8BFA534F48CD6DC5F0DB7BD250F"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/ResetPasswordInput.jsp"
+          },
+          "region" : {
+            "startLine" : 34,
+            "endLine" : 34,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4340",
+      "message" : {
+        "text" : "A hidden form field is used in ResetPasswordInput.jsp on line 35.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "B95EC8BFA534F48CD6DC5F0DB7BD2510"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/ResetPasswordInput.jsp"
+          },
+          "region" : {
+            "startLine" : 35,
+            "endLine" : 35,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4323",
+      "message" : {
+        "text" : "The form post at ResetPasswordStart.jsp line 24 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "735FCC38444C095798196AC03D6FDAB2"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/ResetPasswordStart.jsp"
+          },
+          "region" : {
+            "startLine" : 24,
+            "endLine" : 24,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4353",
+      "message" : {
+        "text" : "The form post at UserEdit.jsp line 21 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "F3F2711DFA11EB2716262F1C6823A3C8"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/UserEdit.jsp"
+          },
+          "region" : {
+            "startLine" : 21,
+            "endLine" : 21,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4313",
+      "message" : {
+        "text" : "A hidden form field is used in UserEdit.jsp on line 22.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "47EEB7D3C816D74B7099C0EE556E45AA"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/UserEdit.jsp"
+          },
+          "region" : {
+            "startLine" : 22,
+            "endLine" : 22,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4318",
+      "message" : {
+        "text" : "The form post at UserSearch.jsp line 21 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "592B0DD2D4A96EE1F188970758EDA711"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/UserSearch.jsp"
+          },
+          "region" : {
+            "startLine" : 21,
+            "endLine" : 21,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4329",
+      "message" : {
+        "text" : "Any information revealed in the HTML comment at Footer.jsp line 17 could help an adversary learn about the system and form a plan of attack.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "8E5F76C9D7D6691AD337CB3D264002AB"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/common/Footer.jsp"
+          },
+          "region" : {
+            "startLine" : 17,
+            "endLine" : 17,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4321",
+      "message" : {
+        "text" : "Any information revealed in the HTML comment at Head.jsp line 5 could help an adversary learn about the system and form a plan of attack.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "64F8FD3C5EC4F9EDBF4E5094E2923346"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/common/Head.jsp"
+          },
+          "region" : {
+            "startLine" : 5,
+            "endLine" : 5,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4338",
+      "message" : {
+        "text" : "The file Head.jsp references a script using a hardcoded domain name on line 7. If attackers compromise the domain, they will have malicious code on this page.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "B42D3BC345715BC780882BE260A4595B"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/common/Head.jsp"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4350",
+      "message" : {
+        "text" : "The file Head.jsp on line 7 loads a script over an unencrypted channel.\n\n\n"
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "E275D60D42B32BAB6E53FE531B8E3F26"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/common/Head.jsp"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4325",
+      "message" : {
+        "text" : "Any information revealed in the HTML comment at Navigation.jsp line 37 could help an adversary learn about the system and form a plan of attack.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "7A47D2D51B2E8B627C8C43E37B499C6A"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/common/Navigation.jsp"
+          },
+          "region" : {
+            "startLine" : 37,
+            "endLine" : 37,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4306",
+      "message" : {
+        "text" : "The form post at Login.jsp line 9 must contain a user-specific secret in order to prevent an attacker from making unauthorized requests.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "1FCC1E56FEB6B3696535A573237EC793"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/example/Login.jsp"
+          },
+          "region" : {
+            "startLine" : 9,
+            "endLine" : 9,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4310",
+      "message" : {
+        "text" : "A web application must define default error pages in order to prevent attackers from mining information from the application container's built-in error response.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "399A248E35AE0FBB04255DE45FA9754C"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/web.xml"
+          },
+          "region" : {
+            "startLine" : 5,
+            "endLine" : 5,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    }, {
+      "ruleId" : "4343",
+      "message" : {
+        "text" : "An overly long session timeout gives attackers more time to potentially compromise user accounts.\n\n\n"
+      },
+      "level" : "note",
+      "partialFingerprints" : {
+        "issueInstanceId" : "C2F39B963AB1AFACD8D57325EEAF747F"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/web.xml"
+          },
+          "region" : {
+            "startLine" : 5,
+            "endLine" : 5,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ]
+    } ]
+  } ]
+}
