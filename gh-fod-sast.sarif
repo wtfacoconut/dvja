@@ -1,0 +1,518 @@
+{
+  "$schema" : "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/master/Schemata/sarif-schema-2.1.0.json",
+  "version" : "2.1.0",
+  "runs" : [ {
+    "tool" : {
+      "driver" : {
+        "name" : "Fortify on Demand",
+        "version" : "SCA version unknown; Rulepack version unknown",
+        "rules" : [ {
+          "id" : "146172308",
+          "shortDescription" : {
+            "text" : "Dockerfile Misconfiguration: Default User Privilege"
+          },
+          "fullDescription" : {
+            "text" : "The Dockerfile does not specify a USER, so it defaults to running with a root user."
+          },
+          "help" : {
+            "text" : "When a Dockerfile does not specify a USER, Docker containers run with super user privileges by default. These super user privileges are propagated to the code running inside the container, which is usually more permission than necessary. Running the Docker container with super user privileges broadens the attack surface which might enable attackers to perform more serious forms of exploitation.\n\nIt is good practice to run your containers as a non-root user when possible.\n\nTo modify a docker container to use a non-root user, the Dockerfile needs to specify a different user, such as:\n\nRUN useradd myLowPrivilegeUser\nUSER myLowPrivilegeUser\n\n\n\nFor more information, see https://ams.fortify.com//redirect/Issues/4b63b46b-befb-4ce5-9f5a-be59d98749e1"
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "146172309",
+          "shortDescription" : {
+            "text" : "Dynamic Code Evaluation: Insecure Transport"
+          },
+          "fullDescription" : {
+            "text" : "The file Head.jsp on line 7 loads a script over an unencrypted channel.The file loads a script over an unencrypted channel."
+          },
+          "help" : {
+            "text" : "Including executable content from a website over an unencrypted channel enables an attacker to perform a man-in-the-middle (MiTM) attack. This enables an attacker to load their own content that is executed as if it was part of the original website.\n\nExample: Consider the following script tag:\n\n&lt;script src=\"http://www.example.com/js/fancyWidget.js\"&gt;&lt;/script&gt;\n\n\nIf an attacker is listening to the network traffic between the user and the server, the attacker can imitate or manipulate the content from www.example.com to load their own JavaScript.\n\nControl the code that your web pages load and if the code is coming from a separate domain, make sure the code is always loaded over a secure connection. Whenever possible, avoid including scripts or other artifacts from third-party sites.\n\nFor more information, see https://ams.fortify.com//redirect/Issues/a963efda-0033-44eb-8e8e-84dfded523d2"
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "146172307",
+          "shortDescription" : {
+            "text" : "Mass Assignment: Sensitive Field Exposure"
+          },
+          "fullDescription" : {
+            "text" : "A sensitive field defined in User.java on line 21 is exposed to the model binder.A sensitive field is exposed to the model binder."
+          },
+          "help" : {
+            "text" : "Modern frameworks allow developers to automatically bind HTTP request parameters from both request query and body into model objects for ease of development and increased productivity. If the binder is not correctly configured to control which HTTP request parameters are bound to which model attributes, an attacker may be able to abuse the model binding process and set any other attributes that should not be exposed to user control. This binding is possible even if the model attributes do not appear in the web forms or API contracts.\n\nExample 1: The following Spring controller method (registerUser) is accessed from a web form that asks a user to register an account by providing their first name, last name, and age:\n\n\n@RequestMapping(method = RequestMethod.POST)\npublic String registerUser(@ModelAttribute(\"user\") User user, BindingResult result, SessionStatus status) {\nif (db.save(user).hasErrors()) {\nreturn \"CustomerForm\";\n} else {\nstatus.setComplete();\nreturn \"CustomerSuccess\";\n}\n}\n\n\nIf registration is successful, the user data will be persisted in the database. The User class is defined as:\n\n\npublic class User {\nprivate String name;\nprivate String lastname;\nprivate int age;\nprivate Details details;\n\n// Public Getters and Setters\n...\n}\n\n\nAnd the Details class is defined as:\n\n\npublic class Details {\nprivate boolean is_admin;\nprivate int id;\nprivate Date login_date;\n\n// Public Getters and Setters\n...\n}\n\n\nGiven this scenario, an attacker may be able to explore the application and discover that there is a details attribute in the User model. If this is the case, the attacker may then attempt to overwrite the current values assigned to their attributes.\nIf an attacker can find out these internal attributes, and the framework binder is not correctly configured in order to disallow binding of these attributes, then the attacker would be able to register an administrator account by sending the following request:\n\n\nname=John&amp;lastname=Smith&amp;age=22&amp;details.is_admin=true\n\n\nIn order to avoid mass assignment vulnerabilities it is important to control the HTTP request to model class binding process. There are different alternatives depending on the framework used:\n\nArchitectural: Define dedicated DTO classes to be bound to user data and containing only those attributes that should be exposed to end users. Map their attributes with the Domain Objects used along the application. These Domain Objects will contain attributes to receive the validated user data and extra attributes that should never be exposed to user control.\n\nBinder configuration: Certain frameworks such as Spring, allow the developers to configure the model binder to accept or reject HTTP request parameters based on their names. For example:\n\nExample 2: \n\n\n@Override\nprotected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {\nbinder.setDisallowedFields(new String[]{\"details.role\", \"details.age\", \"is_admin\"});\n}\n\n\nModel class configuration: Depending on the frameworks used and the serialization/deserialization libraries in use, the model classes to be bound to the HTTP request parameters can be annotated to allow, or disallow, certain attribute bindings. For example, if user data is sent in JSON format and Jackson library is used to deserialize this data, the @JsonIgnore annotation can be used to tell Jackson to ignore a given attribute for serialization and deserialization purposes.\n\nExample 3: \n\n\npublic class User {\n\n@JsonIgnore\nprivate String role;\nprivate String name;\npublic String getName() {\nreturn name;\n}\npublic void setName(String name) {\nthis.name = name;\n}\npublic String getRole() {\nreturn role;\n}\npublic void setRole(String role) {\nthis.role = role;\n}\n\n\nIn other frameworks such as Apache Struts 1 and 2, the framework will only allow binding HTTP request parameters to class members with public setters. In case a given attribute should not be exposed, the setter should be declared private.\n\nExample 4: \n\n\nprivate String role;\nprivate void setRole(String role)  {\nthis.role = role;\n}\n\n\nFor more information, see https://ams.fortify.com//redirect/Issues/a41d89c5-fdd6-484f-a7b5-9fbf784db857"
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "146172303",
+          "shortDescription" : {
+            "text" : "OGNL Expression Injection: Struts 2"
+          },
+          "fullDescription" : {
+            "text" : "Using wildcards (*) in Struts 2 action names enables evaluation of action names as OGNL expressions effectively enabling an attacker to modify system variables such as Session or execute arbitrary commands on the server."
+          },
+          "help" : {
+            "text" : "Object-Graph Navigation Language (OGNL) is an open-source Expression Language (EL) for Java that enables the evaluation of EL expressions in the Struts 2 Value Stack context. Enabling evaluation of unvalidated expressions against the Value Stack can give an attacker access to modify system variables or execute arbitrary code.\n\nStruts 2 allows definition of action mapping based on wildcards, for example:\n\n&lt;action name=\"*\" class=\"com.acme.actions.example\"&gt;\n&lt;result&gt;/example/{1}.jsp&lt;/result&gt;\n&lt;/action&gt;\n\nIf a request doesn't match any other defined action, it will be matched by * and requested action name will be used to load JSP file based on the name of action.\nStruts 2 evaluates the wildcard replacements ({n} where n refers to the order of the wildcards in the action name) as OGNL expressions, and so it allows an attacker to submit any arbitrary OGNL expression to be evaluated.\n\nIt is strongly recommended to upgrade to Struts 2.3.14.3 that enables an action name allow list, allowing only the following characters:\n\n[a-z]*[A-Z]*[0-9]*[.\\-_!/]*\n\n\nFor more information, see https://ams.fortify.com//redirect/Issues/f444c690-44e7-4410-a413-fea13d27f4d5"
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "146172310",
+          "shortDescription" : {
+            "text" : "OGNL Expression Injection: Struts 2"
+          },
+          "fullDescription" : {
+            "text" : "Application is deployed in Development Mode (devMode) allowing arbitrary command execution on the server and leaking detailed information about how the application is coded."
+          },
+          "help" : {
+            "text" : "Struts 2 has a setting called devMode (development mode). When this setting is enabled, Struts 2 will provide additional logging and debug information, which can significantly speed up development at the cost of a high impact in performance and security. devMode will raise the level of debug or normally ignorable problems to exceptions that would not normally be thrown in normal mode.\n\ndevMode also enable some debugging capabilities that allow developers to check variables stored in the Value Stack. These features can be triggered using the debug request parameter:\n- debug=console will pop up an OGNL evaluation console allowing developers to evaluate any arbitrary OGNL expression on the server.\n- debug=command will allow the developers to submit arbitrary OGNL expressions to be evaluated using the request parameter expression.\n- debug=xml will dump the parameters, context, session, and value stack as an XML document.\n- debug=browser will dump the parameters, context, session, and value stack in a browseable HTML document.\n\ndevMode is disabled by default and should never be enabled in production environments as it allows attackers to collect too many information about your application and execute arbitrary commands on the server. To make sure devMode is not enabled, verify that the constant struts.devMode is not set to true in any of the following configurations files:\n\nIn struts.xml configuration file or included documents:\n\n&lt;constant name=\"struts.devMode\" value=\"true\" /&gt;\n\n\nIn struts.properties:\n\nstruts.devMode = true\n\n\nIn web.xml:\n\n&lt;filter&gt;\n&lt;filter-name&gt;struts2&lt;/filter-name&gt;\n&lt;filter-class&gt;org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter&lt;/filter-class&gt;\n&lt;init-param&gt;\n&lt;param-name&gt;struts.devMode&lt;/param-name&gt;\n&lt;param-value&gt;true&lt;/param-value&gt;\n&lt;/init-param&gt;\n&lt;/filter&gt;\n\n\nFor more information, see https://ams.fortify.com//redirect/Issues/4240c3a9-8d95-4906-ae1a-95c095cf4148"
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "146172305",
+          "shortDescription" : {
+            "text" : "Password Management: Hardcoded Password"
+          },
+          "fullDescription" : {
+            "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy."
+          },
+          "help" : {
+            "text" : "Never hardcode passwords. Not only does it expose the password to all of the project's developers, it also makes fixing the problem extremely difficult. After the code is in production, a program patch is probably the only way to change the password. If the account the password protects is compromised, the system owners must choose between security and availability.\n\nA password was configured to access a resource in docker-compose.yml on line 7.\n\n\nExample: The following YAML uses a hardcoded password:\n\n\n...\ncredential_settings:\nusername: scott\npassword: tiger\n...\n\n\nThis configuration may be valid, but anyone who has access to the configuration will have access to the password. After the program is released, changing the default user account \"scott\" with a password of \"tiger\" is difficult. Anyone with access to this information can use it to break into the system.\n\nNever hardcode password. Passwords should generally be obfuscated and managed in an external source. Storing passwords in plain text anywhere on the system allows anyone with sufficient permissions to read and potentially misuse the password.\n\nFor more information, see https://ams.fortify.com//redirect/Issues/a7744d21-42c3-4f5f-8dba-43aa8c2ba79b"
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "146172306",
+          "shortDescription" : {
+            "text" : "Password Management: Hardcoded Password"
+          },
+          "fullDescription" : {
+            "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy."
+          },
+          "help" : {
+            "text" : "Never hardcode passwords. Not only does it expose the password to all of the project's developers, it also makes fixing the problem extremely difficult. After the code is in production, a program patch is probably the only way to change the password. If the account the password protects is compromised, the system owners must choose between security and availability.\n\nA password was configured to access a resource in docker-compose.yml on line 16.\n\n\nExample: The following YAML uses a hardcoded password:\n\n\n...\ncredential_settings:\nusername: scott\npassword: tiger\n...\n\n\nThis configuration may be valid, but anyone who has access to the configuration will have access to the password. After the program is released, changing the default user account \"scott\" with a password of \"tiger\" is difficult. Anyone with access to this information can use it to break into the system.\n\nNever hardcode password. Passwords should generally be obfuscated and managed in an external source. Storing passwords in plain text anywhere on the system allows anyone with sufficient permissions to read and potentially misuse the password.\n\nFor more information, see https://ams.fortify.com//redirect/Issues/94c4df05-5225-4021-8727-a33d49a5486f"
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        }, {
+          "id" : "146172302",
+          "shortDescription" : {
+            "text" : "Password Management: Password in Configuration File"
+          },
+          "fullDescription" : {
+            "text" : "Storing a plain text password in a configuration file may result in a system compromise."
+          },
+          "help" : {
+            "text" : "Storing a plain text password in a configuration file allows anyone who can read the file access to the password-protected resource. Developers sometimes believe that they cannot defend the application from someone who has access to the configuration, but this attitude makes an attacker's job easier. Good password management guidelines require that a password never be stored in plain text.\n\n\nIn this case, a hardcoded password exists in package.properties on line 3.\n\n\nA password should never be stored in plain text. An administrator should be required to enter the password when the system starts. If that approach is impractical, a less secure but often adequate solution is to obfuscate the password and scatter the de-obfuscation material around the system so that an attacker has to obtain and correctly combine multiple system resources to decipher the password.\n\nSome third-party products claim the ability to manage passwords in a more secure way. For example, WebSphere Application Server 4.x uses a simple XOR encryption algorithm for obfuscating values, but be skeptical about such facilities. WebSphere and other application servers offer outdated and relatively weak encryption mechanisms that are insufficient for security-sensitive environments. For a secure solution the only viable option is a proprietary one.\n\nFor more information, see https://ams.fortify.com//redirect/Issues/0bb1d0dc-29b8-4764-b567-947d90f783c2"
+          },
+          "properties" : {
+            "tags" : [ "Critical" ],
+            "precision" : "high"
+          }
+        }, {
+          "id" : "146172304",
+          "shortDescription" : {
+            "text" : "Password Management: Password in Configuration File"
+          },
+          "fullDescription" : {
+            "text" : "Storing a plain text password in a configuration file may result in a system compromise."
+          },
+          "help" : {
+            "text" : "Storing a plain text password in a configuration file allows anyone who can read the file access to the password-protected resource. Developers sometimes believe that they cannot defend the application from someone who has access to the configuration, but this attitude makes an attacker's job easier. Good password management guidelines require that a password never be stored in plain text.\n\n\nIn this case, a hardcoded password exists in config.properties on line 4.\n\n\nA password should never be stored in plain text. An administrator should be required to enter the password when the system starts. If that approach is impractical, a less secure but often adequate solution is to obfuscate the password and scatter the de-obfuscation material around the system so that an attacker has to obtain and correctly combine multiple system resources to decipher the password.\n\nSome third-party products claim the ability to manage passwords in a more secure way. For example, WebSphere Application Server 4.x uses a simple XOR encryption algorithm for obfuscating values, but be skeptical about such facilities. WebSphere and other application servers offer outdated and relatively weak encryption mechanisms that are insufficient for security-sensitive environments. For a secure solution the only viable option is a proprietary one.\n\nFor more information, see https://ams.fortify.com//redirect/Issues/a1af334c-5b40-4070-a902-69e653d2313e"
+          },
+          "properties" : {
+            "tags" : [ "High" ],
+            "precision" : "low"
+          }
+        } ]
+      }
+    },
+    "results" : [ {
+      "ruleId" : "146172308",
+      "message" : {
+        "text" : "The Dockerfile does not specify a USER, so it defaults to running with a root user."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "C30558D67920422BF94AC1350B33CF49"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "Dockerfile"
+          },
+          "region" : {
+            "startLine" : 1,
+            "endLine" : 1,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "Dockerfile:1 - FROM"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "Dockerfile"
+                },
+                "region" : {
+                  "startLine" : 1
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172309",
+      "message" : {
+        "text" : "The file Head.jsp on line 7 loads a script over an unencrypted channel.The file loads a script over an unencrypted channel."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "E275D60D42B32BAB6E53FE531B8E3F26"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/dvja/common/Head.jsp"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "Head.jsp:7"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/webapp/WEB-INF/dvja/common/Head.jsp"
+                },
+                "region" : {
+                  "startLine" : 7
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172307",
+      "message" : {
+        "text" : "A sensitive field defined in User.java on line 21 is exposed to the model binder.A sensitive field is exposed to the model binder."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "FEF2859639B1D1F00213E4DF1C9257EF"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/java/com/appsecco/dvja/models/User.java"
+          },
+          "region" : {
+            "startLine" : 21,
+            "endLine" : 21,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "User.java:21 - Field: role"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/java/com/appsecco/dvja/models/User.java"
+                },
+                "region" : {
+                  "startLine" : 21
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172303",
+      "message" : {
+        "text" : "Using wildcards (*) in Struts 2 action names enables evaluation of action names as OGNL expressions effectively enabling an attacker to modify system variables such as Session or execute arbitrary commands on the server."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "01B2AC68E4FADD79102D89E1C5782205"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/resources/example.xml"
+          },
+          "region" : {
+            "startLine" : 23,
+            "endLine" : 23,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "example.xml:23"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/resources/example.xml"
+                },
+                "region" : {
+                  "startLine" : 23
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172310",
+      "message" : {
+        "text" : "Application is deployed in Development Mode (devMode) allowing arbitrary command execution on the server and leaking detailed information about how the application is coded."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "BADBE2462CA5AC27347FED8D19C63693"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/resources/struts.xml"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "struts.xml:7"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/resources/struts.xml"
+                },
+                "region" : {
+                  "startLine" : 7
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172305",
+      "message" : {
+        "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A1A174E0B163082FF1E5CA9CC2180B96"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker-compose.yml"
+          },
+          "region" : {
+            "startLine" : 7,
+            "endLine" : 7,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "docker-compose.yml:7 - ConfigPair"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "docker-compose.yml"
+                },
+                "region" : {
+                  "startLine" : 7
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172306",
+      "message" : {
+        "text" : "Hardcoded passwords can compromise system security in a way that is difficult to remedy."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "A1A174E0B163082FF1E5CA9CC2180B97"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "docker-compose.yml"
+          },
+          "region" : {
+            "startLine" : 16,
+            "endLine" : 16,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "docker-compose.yml:16 - ConfigPair"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "docker-compose.yml"
+                },
+                "region" : {
+                  "startLine" : 16
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172302",
+      "message" : {
+        "text" : "Storing a plain text password in a configuration file may result in a system compromise."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "1B1FDA4A6A9C933BD42E3A4411FB544F"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/resources/com/appsecco/example/package.properties"
+          },
+          "region" : {
+            "startLine" : 3,
+            "endLine" : 3,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "package.properties:3 - password"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/resources/com/appsecco/example/package.properties"
+                },
+                "region" : {
+                  "startLine" : 3
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    }, {
+      "ruleId" : "146172304",
+      "message" : {
+        "text" : "Storing a plain text password in a configuration file may result in a system compromise."
+      },
+      "level" : "warning",
+      "partialFingerprints" : {
+        "issueInstanceId" : "7852C9684E0399E2AAA93461DD83E714"
+      },
+      "locations" : [ {
+        "physicalLocation" : {
+          "artifactLocation" : {
+            "uri" : "src/main/webapp/WEB-INF/config.properties"
+          },
+          "region" : {
+            "startLine" : 4,
+            "endLine" : 4,
+            "startColumn" : 1,
+            "endColumn" : 80
+          }
+        }
+      } ],
+      "codeFlows" : [ {
+        "threadFlows" : [ {
+          "locations" : [ {
+            "location" : {
+              "message" : {
+                "text" : "config.properties:4 - mysql.password"
+              },
+              "physicalLocation" : {
+                "artifactLocation" : {
+                  "uri" : "src/main/webapp/WEB-INF/config.properties"
+                },
+                "region" : {
+                  "startLine" : 4
+                }
+              }
+            }
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}
